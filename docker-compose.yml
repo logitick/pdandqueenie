@@ -1,0 +1,14 @@
+version: '2'
+services:
+    pdandqueenie:
+        restart: always
+        build:
+            context: ./image
+        image: pdandqueenie
+        environment:
+            - VIRTUAL_HOST=www.pdandqueenie.com, pdandqueenie.com
+        networks:
+            - rproxy_default
+networks:
+    rproxy_default:
+        external: true
